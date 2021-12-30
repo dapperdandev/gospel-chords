@@ -1,6 +1,32 @@
 {
   "version": 1,
   "projects": {
+    "shared-temp": {
+      "projectType": "library",
+      "root": "libs/shared/temp",
+      "sourceRoot": "libs/shared/temp/src",
+      "prefix": "gospel-link",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/temp"],
+          "options": {
+            "jestConfig": "libs/shared/temp/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/temp/src/**/*.ts",
+              "libs/shared/temp/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
     "web": {
       "projectType": "application",
       "root": "apps/web",
@@ -18,23 +44,14 @@
             "tsConfig": "apps/web/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": ["apps/web/src/favicon.ico", "apps/web/src/assets"],
-            "styles": ["apps/web/src/styles.scss"],
+            "styles": [
+              "node_modules/@nebular/theme/styles/prebuilt/default.scss",
+              "apps/web/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
             "production": {
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
-                }
-              ],
               "fileReplacements": [
                 {
                   "replace": "apps/web/src/environments/environment.ts",

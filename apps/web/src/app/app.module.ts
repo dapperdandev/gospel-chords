@@ -1,12 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { NbLayoutModule, NbThemeModule } from '@nebular/theme';
+import { SharedTempModule } from '@gospel-link/shared/temp';
+import { RouterModule } from '@angular/router';
+
 
 @NgModule({
-  declarations: [AppComponent, NxWelcomeComponent],
-  imports: [BrowserModule],
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot([{ path: '', component: AppComponent }]),
+    NbThemeModule.forRoot(),
+    NbLayoutModule,
+    SharedTempModule],
   providers: [],
   bootstrap: [AppComponent],
 })

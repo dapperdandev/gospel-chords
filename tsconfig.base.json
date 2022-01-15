@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@gospel-link/shared/temp": ["libs/shared/temp/src/index.ts"]
+      "@gospel-chords/shared/temp": ["libs/shared/temp/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

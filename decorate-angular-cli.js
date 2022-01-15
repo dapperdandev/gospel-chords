@@ -5,7 +5,7 @@
  * It does this by:
  *
  * - Patching the Angular CLI to warn you in case you accidentally use the undecorated ng command.
- * - Symlinking the ng to nx command, so all commands run through the Nx CLI
+ * - Symchordsing the ng to nx command, so all commands run through the Nx CLI
  * - Updating the package.json postinstall script to give you control over this script
  *
  * The Nx CLI decorates the Angular CLI, so the Nx CLI is fully compatible with it.

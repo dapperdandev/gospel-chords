@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'gospel-link-root',
+  selector: 'gospel-chords-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

@@ -1,12 +1,17 @@
 import { Controller, Get } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
+import { map } from 'rxjs';
+// import { ApiOkResponse, ApiProperty } from '@nestjs/swagger';
+import { ApiBibleService } from './api-bible.service';
 
 @Controller('bible')
 export class ApiBibleController {
-  constructor(private configService: ConfigService) {}
+  constructor(private apiBibleService: ApiBibleService) {}
 
   @Get()
+  // @ApiOkResponse({type: Example})
   getData() {
-    return this.configService.get<string>('API_BIBLE_API_KEY');
+    return this.apiBibleService.getBibles().pipe(
+      map(({data}) => data)
+    )
   }
 }

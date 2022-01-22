@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@gospel-chords/api/bible": ["libs/api/bible/src/index.ts"],
       "@gospel-chords/shared/temp": ["libs/shared/temp/src/index.ts"]
     }
   },

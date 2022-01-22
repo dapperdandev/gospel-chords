@@ -53,6 +53,29 @@
       },
       "tags": []
     },
+    "api-bible": {
+      "root": "libs/api/bible",
+      "sourceRoot": "libs/api/bible/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/api/bible/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/api/bible"],
+          "options": {
+            "jestConfig": "libs/api/bible/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
     "shared-temp": {
       "projectType": "library",
       "root": "libs/shared/temp",
